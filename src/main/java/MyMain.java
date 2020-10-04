@@ -8,7 +8,7 @@ public class MyMain {
         double sixes = 0.0;
         for(int i =0; i<10000;i++){
             for(int j =0;j<6;j++){
-                if((int)(Math.random()*6)+1==6){
+                if((int)((Math.random()*6)+1)==6){ 
                 sixes+=1;
                 j=0;
                 break;
@@ -24,23 +24,18 @@ public class MyMain {
     // twelve dice. Uses 10000 trials.
     public static double probabilityTwoSixes() {
         double sixes = 0.0;
-        int temp6 = 0;
+        int tempSix = 0;
         for(int i =0; i<10000;i++){
-            temp6=0;
+            tempSix=0;
             for(int j =0;j<12;j++){
 
-                if(temp6==2){
-                    temp6=0;
-                    j=0;
-                    sixes+=1;
-                    break; 
+                if((int)((Math.random()*6)+1)==6){
+                tempSix+=1;  
                 }
-
-                if((int)(Math.random()*6)+1==6){
-                temp6+=1;  
-                }
-
             }
+            if(tempSix>1){
+                    sixes+=1;
+                    }
         }
         double prct = sixes/100.0;
         return prct;
@@ -51,22 +46,21 @@ public class MyMain {
     public static double probabilityThreeSixes() {
         double sixes = 0.0;
         int temp6 = 0;
+        
         for(int i =0; i<10000;i++){
             temp6=0;
+
             for(int j =0;j<18;j++){
-
-                if(temp6==3){
-                    temp6=0;
-                    j=0;
-                    sixes+=1;
-                    break; 
-                    }
-
-                if((int)(Math.random()*6)+1==6){
+                if((int)((Math.random()*6)+1)==6){
                 temp6+=1;  
                 }
 
             }
+            if(temp6>2){
+                    sixes+=1;
+                    }
+
+
         }
         double prct = sixes/100.0;
         return prct;
